@@ -1,0 +1,271 @@
+body{
+    background-image: url("background.gif");
+    background-repeat: repeat;
+    color: white;
+    font-family: "Lucida Console";
+    overflow-x: hidden;
+}
+
+.bigback{
+    background-size: 100%
+}
+
+.purpur {
+    color:#6b11a7;
+}
+
+.center{
+    text-align: center;
+}
+
+.infront{
+    z-index: 998;
+    position:relative;
+}
+
+.generictext{
+    font-size:21px;
+    color:white;
+    margin-left: 90px;
+    margin-right: 90px;
+}
+
+.big{
+    font-size: 115px;
+    line-height: 0.9;
+}
+
+.bigbreak{
+    height:200px;
+}
+
+.mediumbreak{
+    height:100px;
+}
+
+.medium{
+    font-size:55px;
+    line-height:0.95;
+}
+
+.medium-small{
+    font-size:25px;
+    line-height:0.95;
+}
+
+.othertitle{
+    position: relative;
+    text-align: center;
+}
+
+.white{
+    color: white;
+}
+
+.loginthing{
+    padding: 12px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #8c00ff;
+    border-radius: 4px;
+    color:white;
+    text-align: center;
+    background-color:#000000;
+    font-size: 20px;
+    box-sizing: border-box;
+    width: 80%;
+}
+
+.title{
+    position: relative;
+    text-align: center;
+    animation-name: displayleft, bob;
+    animation-duration: 2.5s, 5s;
+    animation-iteration-count: 1, infinite;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s, 2.6s;
+    z-index:1;
+}
+
+.absolutewawawa{
+    height:70px;
+    width:100%;
+    top:0;
+    z-index:999;
+    position:absolute;
+    background-color:rgb(55, 12, 75);
+}
+
+.logincont{
+    height:700px;
+    border-radius:30px;
+    padding-left:0%;
+    padding-right:0%;
+    padding-top:5px;
+    padding-bottom:5px;
+    margin: auto;
+    background-color: rgba(128,128,128,0.3);
+    backdrop-filter:blur(24px);
+    width:50%;
+}
+
+.centeredtext{
+    text-align: center;
+    z-index:1;
+}
+
+.bob {
+  position: relative;
+  animation-name: bob; 
+  animation-duration: 5s; 
+  animation-iteration-count: infinite; 
+  animation-timing-function: ease-in-out;
+  animation-delay: 2.6s;
+}
+
+.buttoncon{
+    margin:auto;
+    text-align:center;
+}
+
+.halfcon{
+    float:left;
+    width:50%;
+    padding-top:10px;
+    padding-bottom:10px;
+    text-align:center;
+    font-size:21px;
+    margin-left:60px;
+    margin-right:60px;
+}
+
+.flex{
+    display:flex;
+}
+
+.bigbutton{
+    background-color: #e600ffbe;
+    border: none;
+    text-align: center;
+    color: white;
+    display: inline-block;
+    border-radius: 12px;
+    width:150px;
+    height:60px;
+    font-size:24px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.bigfatbutton{
+    background-color: #e600ffbe;
+    border: none;
+    text-align: center;
+    color: white;
+    display: inline-block;
+    border-radius: 36px;
+    width:450px;
+    height:180px;
+    font-size:36px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.navbar{
+    height:70px;
+    width:100%;
+    top:0;
+    z-index:999;
+    position:sticky;
+    background-color:rgb(55, 12, 75);
+}
+
+.navitem{
+    height:70px;
+    line-height:70px;
+    width:25%;
+    border-color:#6b11a7;
+    cursor: pointer;
+    color: white;
+    float:left;
+    font-size:35px;
+    text-align:center;
+    background-color:rgb(39, 8, 53);
+}
+
+.navitem:hover{
+    background-color:rgb(60, 12, 75);
+    box-shadow: 0 10px 16px 0 rgba(104, 8, 117, 0.6);
+}
+
+.fixed{
+    height:450px;
+    padding-left:0%;
+    padding-right:0%;
+    padding-top:5px;
+    padding-bottom:5px;
+    border-radius: 0px;
+    margin: auto;
+    /*background-color:red;*/
+    width:100%;
+}
+
+.bgb{
+    background-color: black;
+
+}
+
+.ripplespace{
+    background-color: rgba(60,60,60,0.4);
+    backdrop-filter:blur(24px);
+}
+
+.bigwbutton{
+    background-color: rgb(255, 255, 255);
+    border: none;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    display: inline-block;
+    border-radius: 12px;
+    width:150px;
+    height:60px;
+    font-size:24px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+@keyframes bob { /* keyframs for animation */
+  0%   {left:0px; top:0px;} /* at the start, left 0px, top 0px */
+  50%  {left:0px; top:40px;} /* 50% in, top 40px */
+  100% {left:0px; top:0px;} /* completed, left 0px, top 0px */
+}
+
+.titlecont {
+    z-index:-5;
+}
+
+#titlebox{
+    padding-bottom: 130px;
+}
+
+@keyframes displayleft {
+  0%   {left:0px; top:900px; opacity:0;}
+  100%  {left:0px; top:0px; opacity:1;}
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a620ff;  
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(89, 0, 255);   
+}
