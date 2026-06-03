@@ -2,62 +2,30 @@
 <html>
 <head>
   <link rel="stylesheet" href="enterprise.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Inconsolata:wght@200..900&family=Sixtyfour&display=swap" rel="stylesheet">
+<script type="module" src="enterprise.js"></script>
 </head>
-<body>
-    <div class="fixed titlecont" id="titlebox">
-        <h1 class="title big">GonkRewards</h1>
-        <h3 class="title medium purpur">Customer Loyalty set up in seconds</h3>
-        <div class="buttoncon">
-            <button class="title bigbutton" onclick="window.open('./login.html', '_self')">Sign up ></button>
+<body class="bigback">
+    <div class="absolutewawawa">
+        <button class="navitem" onclick="window.open('./index.html', '_self')">Home</button>
+        <button class="navitem" onclick="window.open('./enterprise.html', '_self')">Dashboard</button>
+        <button class="navitem" onclick="window.open('./enterprise-rewards.html', '_self')">Manage Rewards</button>
+        <button class="navitem" onclick="window.open('./login.html', '_self')">Logout</button>
+    </div>
+    <!--Gonk-->
+    <div class="mediumbreak"></div>
+    <div class="fixed nfront ripplespace">
+        <h3 class="othertitle medium" id="welcome" style="padding-bottom:0px;">Welcome, enterprise_name</h3>
+        <h5 class="othertitle small-medium" id="entid" style="padding-top:0px;">Enterprise ID: </h5>
+        <p class="center medium-small">Manage your rewards at the "Manage Rewards" tab or view your data here at the dashboard.</p>
         </div>
     </div>
     <br>
-    <div class="navbar">
-        <button class="navitem" onclick="window.open('./enterprise.html', '_self')">Home</button>
-        <button class="navitem" onclick="window.open('./login.html', '_self')">Login</button>
-        <button class="navitem">X</button>
-        <button class="navitem">X</button>
-    </div>
-    <br>
-    <div class="fixed bgb ripplespace infront">
-        <h3 class="othertitle medium purpur">What is GonkRewards?</h3>
-        <div class="flex">
-            <div class="halfcon">Gonk1</div>
-            <div class="halfcon">GonkRewards is a solution that has been found for all buisnesses that need to retain their customers. It is
-                a portable solution that allows even small buisnesses to have their own loyalty rewards program, and can be applied at any scale.
-            </div>
-        </div>
-    </div>
-    <br>
-    <h3 class="othertitle medium white">Gain important data from customers</h3>
-    <p class="center generictext">GonkRewards empowers you to collect data from your customers and get a better view on your customer base, so
-        your buisness can adapt in the right way.
-    </p>
-    <br>
-    <div class="fixed bgb ripplespace">
-        <h3 class="othertitle medium purpur">How is GonkRewards used?</h3>
-        <div class="flex">
-            <div class="halfcon">Gonk2</div>
-            <div class="halfcon">To begin, you will need to sign your buisness up to GonkRewards and complete the initialization steps.
-                You can then set the ways customers are rewarded with points and the offers they get once they reach certain point values.
-                You can also set things such as surveys to collect data from your customers in the program in exchange for points.
-            </div>
-        </div>
-    </div>
-    <br>
-    <div class="fixed bgb ripplespace">
-        <h3 class="othertitle medium purpur">What is the cost?</h3>
-        <div class="flex">
-            <div class="halfcon">Gonk1</div>
-            <div class="halfcon">GonkRewards itself is free, however you will need to set rewards such as products and discounts to be given once
-                your customers reach certain thresholds of points and similar.
-            </div>
-        </div>
-    </div>
-    <br>
-    <div class="bigbreak"></div>
-    <div class="buttoncon">
-        <button class="bigfatbutton" onclick="window.open('./login.html', '_self')">Sign up ></button>
+    <div class="fixed nfront ripplespace">
+        <h3 class="othertitle medium">Data</h3>
+        <p>Placeholder, this will be added once the backend is fully complete. This area will contain graphs displaying current users, user data and similar.  For now please give feedback on the frontend UI.</p>
     </div>
     <div class="bigbreak"></div>
 </body>

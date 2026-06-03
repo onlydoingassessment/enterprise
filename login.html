@@ -1,11 +1,16 @@
 <!DOCTYPE html>
+
 <html>
 <head>
   <link rel="stylesheet" href="enterprise.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Inconsolata:wght@200..900&family=Sixtyfour&display=swap" rel="stylesheet">
+<script type="module" src="login.js"></script>
 </head>
 <body class="bigback">
     <div class="absolutewawawa">
-        <button class="navitem" onclick="window.open('./enterprise.html', '_self')">Home</button>
+        <button class="navitem" onclick="window.open('./index.html', '_self')">Home</button>
         <button class="navitem" onclick="window.open('./login.html', '_self')">Login</button>
         <button class="navitem">X</button>
         <button class="navitem">X</button>
@@ -25,8 +30,8 @@
                 </form>
                 <div class="mediumbreak"></div>
                 <div class="buttoncon">
-                    <button class="bigwbutton">Sign up ></button>
-                    <button class="bigbutton">Log in ></button>
+                    <button class="bigwbutton" type="button" id="signup">Sign up ></button>
+                    <button class="bigbutton" type="button" id="signin">Log in ></button>
                 </div>
         </div>
     </div>
