@@ -141,7 +141,10 @@ async function givePoints(customer, amount, productName) {
   
   const enterpriseId = document.getElementById("enterprise_id").value;
 
-  console.log("Subtracting Points: " + numericAmount);
+  if (getData(`users/${enterpriseId}/customers/${customer}/points`) < numericAmount) {
+    alert("Insufficent points")
+    return;
+  }
 
   const updates = {};
   
@@ -166,12 +169,9 @@ async function givePoints(customer, amount, productName) {
   updates[`users/${enterpriseId}/analytics/daily_redemptions/${todayDateString}/${sanitizedProductName}`] = increment(1);
 
   try {
-    // Send all updates synchronously in a single atomic database request
     await update(ref(db), updates);
-    console.log("Points, log, and daily analytics updated successfully.");
   } catch (error) {
-    console.error("Failed executing database update payload:", error);
   }
-
+  alert("Successfully redeemed: " + productName)
   await updatePoints(enterpriseId);
 }
