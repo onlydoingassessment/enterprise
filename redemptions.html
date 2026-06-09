@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+  <link rel="stylesheet" href="enterprise.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Inconsolata:wght@200..900&family=Sixtyfour&display=swap" rel="stylesheet">
+<script type="module" src="redemptions.js"></script>
+</head>
+<body class="bigback">
+    <div class="absolutewawawa">
+        <button class="navitem" onclick="window.open('./redemptions.html', '_self')">Redemptions</button>
+        <button class="navitem" onclick="window.open('./enterprise.html', '_self')">Dashboard</button>
+        <button class="navitem" onclick="window.open('./enterprise-rewards.html', '_self')">Manage Rewards</button>
+        <button class="navitem" onclick="window.open('./login.html', '_self')">Logout</button>
+    </div>
+
+    <div class="mediumbreak"></div>
+    <div class="fixed nfront ripplespace">
+        <h3 class="othertitle medium">Redemptions</h3>
+        <p class="center medium-small">Customer redemptions currently pending.</p>
+        <br>
+    <!-- Enterprise Selector to view specific enterprise redemptions -->
+    <label for="enterprise_id">Current Enterprise ID:</label>
+    <p id="enterprise_id">Loading...</p>
+
+    <div id="loading" class="loading">Loading redemptions...</div>
+
+    <table id="redemptionTable">
+        <thead>
+            <tr>
+                <th>Customer UID</th>
+                <th>Customer Email</th>
+                <th>Product Name</th>
+                <th>Date / Time</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="redemptions-list">
+        </tbody>
+    </table>
+</div>
+
+<script type="module" src="redemptions.js"></script>
+</body>
+</html>

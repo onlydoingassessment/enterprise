@@ -9,7 +9,7 @@
 </head>
 <body class="bigback">
     <div class="absolutewawawa">
-        <button class="navitem" onclick="window.open('./index.html', '_self')">Home</button>
+        <button class="navitem" onclick="window.open('./redemptions.html', '_self')">Redemptions</button>
         <button class="navitem" onclick="window.open('./enterprise.html', '_self')">Dashboard</button>
         <button class="navitem" onclick="window.open('./enterprise-rewards.html', '_self')">Manage Rewards</button>
         <button class="navitem" onclick="window.open('./login.html', '_self')">Logout</button>
@@ -18,13 +18,15 @@
     <div class="mediumbreak"></div>
     <div class="fixed nfront ripplespace">
         <h3 class="othertitle medium">Manage Rewards</h3>
-        <p class="center medium-small">Change the items customers can redeem with their points and set ways customers can earn points here.</p>
+        <p class="center medium-small">Change the items customers can redeem with their points and set ways customers can earn points here. Once a customer redeems it, you can go over to "Redemptions" to see a list of customer redemptions unfufilled.</p>
         <br>
         <h3 class="othertitle medium">Modify Rewards</h3>
         <div id="rewardCont" class="flexibleLength">
-            <div class="rewleftcon">Reward Name</div>
-            <div class="rewmidcon">Reward description</div>
-            <div class="rewrightcon">Reward Cost</div>
+            <div class="row-wrapper">
+                <div class="rewleftcon">Reward Name</div>
+                <div class="rewmidcon">Reward description</div>
+                <div class="rewrightcon">Reward Cost</div>
+            </div>
             <br>
             <br>
             <br>
@@ -33,18 +35,33 @@
         <br>
         <br>
         <h3 class="othertitle medium">Manage Points</h3>
-        <p class="center medium-small">Change the products customers can purchase to earn points.</p>
+        <p class="center medium-small">Change the products customers can purchase to earn points. Once customers purchase a product, you can go over to Dashboard to log it and grant the customer the corresponding amount of points.</p>
         <br>
         <h3 class="othertitle medium">Modify Points</h3>
         <div id="purchaseCont" class="flexibleLength">
-            <div class="rewleftcon">Item Name</div>
-            <div class="rewmidcon">Item description</div>
-            <div class="rewrightcon">Item Reward</div>
+            <div class="row-wrapper">
+                <div class="rewleftcon">Item Name</div>
+                <div class="rewmidcon">Item description</div>
+                <div class="rewrightcon">Item Reward</div>
             <br>
             <br>
             <br>
+            </div>
         </div>
-    </div>
-    <div class="bigbreak"></div>
+        <br>
+        <br>
+        <br>
+        <h3 class="othertitle medium">Customer Redemption</h3>
+        <p class="center medium-small">Give a customer points for purchasing a feature product.</p>
+        <div class="row-wrapper">
+            <div class="rewleftcon">Customer UID</div>
+            <div class="rewmidcon">Product Claimed (Number from 0-5)</div>
+            <div class="rewrightcon"></div>
+        </div>
+        <div class="row-wrapper">
+            <div class="rewleftcon"><input type="text" class="managething" value="" id="customerUID"></div>
+            <div class="rewmidcon"><input type="number" class="managething" value="" id="productClaimed"></div>
+            <div class="rewrightcon"><input type="button" class="claimbutton" value="Submit" id="submitPoints"></div>
+        </div>
 </body>
 </html>

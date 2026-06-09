@@ -1,4 +1,4 @@
-import { getDatabase, ref, set, update, child, get } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-database.js";
+import { getDatabase, ref, set, update, child, get, increment } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-database.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-app.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-auth.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-analytics.js";
@@ -20,6 +20,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth();
+const dbRef = ref(getDatabase());
 
 var uid = 0
 
@@ -28,7 +29,6 @@ onAuthStateChanged(auth, async (user) => {
   if (user) {
     uid = user.uid;
     
-    // Use an async loop to render each item as its data arrives
     for (let i = 0; i < 6; i++) {
       await addNewItem(i);
     }
@@ -36,13 +36,32 @@ onAuthStateChanged(auth, async (user) => {
     for (let i = 0; i < 6; i++) {
       addNewPurchase(i);
     }
+
+    document.getElementById("submitPoints").addEventListener("click", async (e) => {
+      console.log("Item logged");
+  
+      const customerId = document.getElementById("customerUID").value;
+      const productVal = document.getElementById("productClaimed").value;
+  
+      const pointsAmount = await getData("users/" + uid + "/purchase" + productVal + "/cost");
+  
+      await givePoints(customerId, pointsAmount);
+    });
     
   } else {
     console.warn("No user is signed in.");
   }
 });
 
-const dbRef = ref(getDatabase());
+async function givePoints(customer, amount) {
+  const db = getDatabase();
+  
+  const numericAmount = Number(amount); 
+  return update(ref(db, `users/${uid}/customers/${customer}`), { 
+    points: increment(numericAmount) 
+  });
+}
+
 async function getData(location){
   try {
     const snapshot = await get(child(dbRef, location));
@@ -103,9 +122,11 @@ async function addNewItem(ItemID) {
   const costVal = await getData("users/" + uid + "/product" + ItemID + "/cost");
   
   const htmlTemplate = `
-    <div class="rewleftcon"><input type="text" class="managething" value="${nameVal}" id="name${ItemID}"></div>
-    <div class="rewmidcon"><input type="text" class="managething" value="${descVal}" id="desc${ItemID}"></div>
-    <div class="rewrightcon"><input type="text" class="managething" value="${costVal}" id="cost${ItemID}"></div>
+    <div class="row-wrapper">
+      <div class="rewleftcon"><input type="text" class="managething" value="${nameVal}" id="name${ItemID}"></div>
+      <div class="rewmidcon"><input type="text" class="managething" value="${descVal}" id="desc${ItemID}"></div>
+      <div class="rewrightcon"><input type="number" class="managething" value="${costVal}" id="cost${ItemID}"></div>
+    </div>
   `;
   
   container.insertAdjacentHTML('beforeend', htmlTemplate);
@@ -129,9 +150,11 @@ async function addNewPurchase(ItemID) {
   const costVal = await getData("users/" + uid + "/purchase" + ItemID + "/cost");
   
   const htmlTemplate = `
-    <div class="rewleftcon"><input type="text" class="managething" value="${nameVal}" id="rname${ItemID}"></div>
-    <div class="rewmidcon"><input type="text" class="managething" value="${descVal}" id="rdesc${ItemID}"></div>
-    <div class="rewrightcon"><input type="text" class="managething" value="${costVal}" id="rcost${ItemID}"></div>
+    <div class="row-wrapper">
+      <div class="rewleftcon"><input type="text" class="managething" value="${nameVal}" id="rname${ItemID}"></div>
+      <div class="rewmidcon"><input type="text" class="managething" value="${descVal}" id="rdesc${ItemID}"></div>
+      <div class="rewrightcon"><input type="number" class="managething" value="${costVal}" id="rcost${ItemID}"></div>
+    </div>
   `;
   
   container.insertAdjacentHTML('beforeend', htmlTemplate);

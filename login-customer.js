@@ -27,7 +27,7 @@ document.getElementById("signup").addEventListener("click", (e) => {
       console.log("GGGONNK")
       localStorage.setItem('username', userCredential.user);
       const user = userCredential.user;
-      window.open('./enterprise.html', '_self')
+      window.open('./customer.html', '_self')
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -35,6 +35,7 @@ document.getElementById("signup").addEventListener("click", (e) => {
       alert(errorMessage);
       console.error(errorCode);
       console.error(errorMessage);
+      // ..
     });
 });
 
@@ -44,7 +45,7 @@ document.getElementById("signin").addEventListener("click", (e) => {
   signInWithEmailAndPassword(auth, document.getElementById("username").value, document.getElementById("password").value).then((userCredential) => {  
       localStorage.setItem('username', userCredential.user);
       const user = userCredential.user;
-      window.open('./enterprise.html', '_self')
+      window.open('./customer.html', '_self')
     })
     .catch((error) => {
       const errorCode = error.code;

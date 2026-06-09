@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="enterprise.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Inconsolata:wght@200..900&family=Sixtyfour&display=swap" rel="stylesheet">
+<script type="module" src="customer.js"></script>
+</head>
+<body class="bigback">
+    <div class="absolutewawawa">
+        <button class="navitem" onclick="window.open('./index.html', '_self')">Home</button>
+        <button class="navitem" onclick="window.open('./enterprise.html', '_self')">Dashboard</button>
+        <button class="navitem" onclick="window.open('./enterprise-rewards.html', '_self')">Manage Rewards</button>
+        <button class="navitem" onclick="window.open('./login.html', '_self')">Logout</button>
+    </div>
+    <!--Gonk-->
+    <div class="mediumbreak"></div>
+    <div class="fixed nfront ripplespace">
+        <h3 class="othertitle medium" id="welcome" style="padding-bottom:0px;">Welcome, Customer</h3>
+        <p class="center medium-small">View your points and rewards here.</p>
+        </div>
+    </div>
+    <br>
+    <div class="notfixed nfront ripplespace">
+        <h3 class="othertitle medium">View Enterprise Offers</h3>
+        <p class="center medium-small">Enter enterprise ID</p>
+        <div class="centeredtext"><input type="text" class="idbox" value="" id="enterprise_id"></div>
+        <h4 class="medium center">Points</h4>
+        <h2 class="medium center" id="points">0</h2>
+    </div>
+    <br>
+    <h3 class="othertitle medium-small">Offers</h3>
+    <div class="notfixed nfront ripplespace" id="output"></div>
+    <br>
+    <h3 class="othertitle medium-small">Rewards</h3>
+    <div class="notfixed nfront ripplespace" id="off_output"></div>
+    <div class="bigbreak"></div>
+</body>
+</html>
