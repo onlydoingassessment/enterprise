@@ -140,8 +140,7 @@ async function givePoints(customer, amount, productName) {
   const numericAmount = Number(amount); 
   
   const enterpriseId = document.getElementById("enterprise_id").value;
-
-  if (getData(`users/${enterpriseId}/customers/${customer}/points`) < numericAmount) {
+  if (Number(await getData(`users/${enterpriseId}/customers/${customer}/points`)) < Math.abs(numericAmount)) {
     alert("Insufficent points")
     return;
   }
